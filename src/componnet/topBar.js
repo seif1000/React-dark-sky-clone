@@ -94,7 +94,7 @@ const TopBar =(props)=>  {
                       <span>shine sun </span>
                  </Link>
                  <Link  to="/React-dark-sky-clone" className="link">Home</Link>
-                <Link to="https://github.com/seif1000/React-dark-sky-clone" className="link"><img src={githube} alt="git"/></Link>
+                <a to="https://github.com/seif1000/React-dark-sky-clone" className="link"><img src={githube} alt="git"/></a>
             </div>
             <div className ="location__city">
                    <div  className="location" onClick={getLocation} style={{
