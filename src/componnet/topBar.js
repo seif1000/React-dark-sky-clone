@@ -56,7 +56,7 @@ const TopBar =(props)=>  {
                 latitude:lat ,
                 longitude:long
             }))
-            Axios.get(`http://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}&zoom=18&addressdetails=1`)
+            Axios.get(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}&zoom=18&addressdetails=1`)
                  .then(res=>{
                    localStorage.setItem('city' ,JSON.stringify(res.data.address.state));
                    localStorage.setItem('province',JSON.stringify(res.data.address.city))
