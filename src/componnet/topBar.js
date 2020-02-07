@@ -1,29 +1,76 @@
-import React,{useContext} from 'react'
+import React,{useContext,useEffect} from 'react'
 import {Context} from '../context' ;
+import {Link} from 'react-router-dom' ;
 import Axios from 'axios'
+import {useLocation} from 'react-router-dom'
+import logo from '../asset/logo.png'
+import githube from '../asset/github.png'
 const TopBar =(props)=>  {
+  
     const [weather,setWeather] = useContext(Context) ;
- //   console.log(weather.currently) ;
+ 
+    const herukuCors = "https://cors-anywhere.herokuapp.com/" ;
+    const darkSky = "https://api.darksky.net/forecast/" ;
+    const myKey = process.env.REACT_APP_DARK_SKY_API_KEY ;
+    
+    const fetchData = (lat,long)=>{
+
+        Axios
+        .get(`${herukuCors}${darkSky}${myKey}/${lat},${long}?exclude="flags"`)
+        .then(res=>{
+            localStorage.setItem('daily',JSON.stringify(res.data.daily.data.slice(1,8))) ;
+            localStorage.setItem('hourly',JSON.stringify(res.data.hourly.data)) ;
+            setWeather(weather=>({
+                ...weather,
+                currently:res.data.currently ,
+                hourly:res.data.hourly.data,
+                daily:res.data.daily.data.slice(1,8),
+                summary:res.data.hourly.summary
+            })
+            )}
+            )}
+    const {pathname} = useLocation();
+  
+    useEffect(()=>{
+        let lat,longt ;
+        if(JSON.parse(localStorage.getItem("lat"))!=null && JSON.parse(localStorage.getItem("longt"))!=null  ){
+              lat = JSON.parse(localStorage.getItem("lat")) ;
+              longt = JSON.parse(localStorage.getItem("longt")) ;
+        }else{
+            lat = weather.latitude ;
+            longt = weather.longitude ;
+        }
+        fetchData(lat,longt) ;
+    },[]) ;
+
 
     const getLocation = ()=>{
   
         navigator.geolocation.getCurrentPosition(function(position) {
             let lat = position.coords.latitude;
             let long = position.coords.longitude;
+            localStorage.setItem("lat",JSON.stringify(lat)) ;
+            localStorage.setItem('longt',JSON.stringify(long)) ;
+            console.log(lat,long) ;
             setWeather(weather=>({
                 ...weather,
                 latitude:lat ,
                 longitude:long
             }))
-            Axios.get(`https://geocode.xyz/${lat},${long}?json=1`)
+            Axios.get(`http://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}&zoom=18&addressdetails=1`)
                  .then(res=>{
-
-                  setWeather(weather=>({
+                   localStorage.setItem('city' ,JSON.stringify(res.data.address.state));
+                   localStorage.setItem('province',JSON.stringify(res.data.address.city))
+                 return setWeather(weather=>({
                     ...weather,
-                    city:res.data.city,
-                    province:res.data.staddress
+                    city:res.data.address.state,
+                    province:res.data.address.city
+                
                 }))
-                 
+              
+                 })
+                 .then(()=>{
+                     fetchData(lat,long) ;
                  })
                  .catch(err=>{
                      console.log(err)
@@ -31,18 +78,33 @@ const TopBar =(props)=>  {
           });
     
         }    
-
+        let city,province ;
+        if(JSON.parse(localStorage.getItem("city"))!=null && JSON.parse(localStorage.getItem("province"))!=null ){
+           city = JSON.parse(localStorage.getItem("city")) ;
+           province  = JSON.parse(localStorage.getItem("province")) ;
+        }else{
+             city = weather.city;
+             province = weather.province ;
+        }
+       
     return (
         <div className="top__bar">
             <div className="brand__bar">
-                React Weather app
+                 <Link className="link one" to="/">
+                      <img src={logo} alt="logo" />
+                      <span>shine sun </span>
+                 </Link>
+                 <Link  to="/" className="link">Home</Link>
+                <Link to="" className="link"><img src={githube} alt="git"/></Link>
             </div>
             <div className ="location__city">
-                   <div className="location" onClick={getLocation}>
+                   <div  className="location" onClick={getLocation} style={{
+                       display:pathname==="/charts"?"none":"block"
+                       }}>
                         <i className="fas fa-location-arrow"></i>
                     </div>
                     <div className="city" >
-                        <p>{weather.province},{weather.city}</p>  
+                        <p>{province},{city}</p>  
                     </div>
             </div>
             <div className="weather__information">
@@ -50,7 +112,7 @@ const TopBar =(props)=>  {
                       <p> <span>Wind:</span> {weather.currently.windSpeed } mph</p>
                 </div>
                 <div className="information">
-                      <p> <span>Humidity:</span> {weather.currently.humidity *100}%</p>
+                      <p> <span>Humidity:</span> {(weather.currently.humidity *100).toFixed(0)}%</p>
                 </div>
                 <div className="information">
                       <p> <span>Dew Pt:</span> {weather.currently.dewPoint}°</p>

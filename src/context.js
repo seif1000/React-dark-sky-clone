@@ -8,14 +8,17 @@ export const Context = React.createContext();
          longitude:"39.826168",
          daily:[],
          currently:{} ,
+         hourly:[],
          city:"mekka",
-         province:"mekka"
+         summray:"" ,
+         province:"mekka",
+         show:false 
     }
 
-    const [user,setWeather] = useState(initialState);
+    const [weather,setWeather] = useState(initialState);
 
     return (
-       <Context.Provider value={[user,setWeather]}>{children}</Context.Provider>
+       <Context.Provider value={[weather,setWeather]}>{children}</Context.Provider>
     )
 }
 

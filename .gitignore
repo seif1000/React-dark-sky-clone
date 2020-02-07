@@ -22,4 +22,28 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyDNvRw7DrQO3WNVyhrOxKqZDCCmACswkV0
+
+ http://nominatim.openstreetmap.org/reverse?format=json&lat=28.033886&lon=1.6596259999999998&zoom=18&addressdetails=1
+
+
+
+
+ apparentTemperature: 52.18
+cloudCover: 0
+dewPoint: 34.51
+humidity: 0.51
+icon: "clear-night"
+ozone: 272.2
+precipIntensity: 0
+precipProbability: 0
+pressure: 1021.9
+summary: "صافِ"
+temperature: 52.18
+time: 1580874884
+uvIndex: 0
+visibility: 10
+windBearing: 74
+windGust: 6.53
+windSpeed: 4.27
+
+.env
