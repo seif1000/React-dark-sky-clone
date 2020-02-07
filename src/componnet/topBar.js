@@ -6,13 +6,12 @@ import {useLocation} from 'react-router-dom'
 import logo from '../asset/logo.png'
 import githube from '../asset/github.png'
 const TopBar =(props)=>  {
-  
     const [weather,setWeather] = useContext(Context) ;
  
     const herukuCors = "https://cors-anywhere.herokuapp.com/" ;
     const darkSky = "https://api.darksky.net/forecast/" ;
-    const myKey = process.env.REACT_APP_DARK_SKY_API_KEY ;
-    
+    const myKey = "d91c7708406f81bd0ba5b2dd83c1816b" ;
+   
     const fetchData = (lat,long)=>{
 
         Axios
