@@ -89,16 +89,16 @@ const TopBar =(props)=>  {
     return (
         <div className="top__bar">
             <div className="brand__bar">
-                 <Link className="link one" to="/">
+                 <Link className="link one" to="/React-dark-sky-clone">
                       <img src={logo} alt="logo" />
                       <span>shine sun </span>
                  </Link>
-                 <Link  to="/" className="link">Home</Link>
-                <Link to="" className="link"><img src={githube} alt="git"/></Link>
+                 <Link  to="/React-dark-sky-clone" className="link">Home</Link>
+                <Link to="https://github.com/seif1000/React-dark-sky-clone" className="link"><img src={githube} alt="git"/></Link>
             </div>
             <div className ="location__city">
                    <div  className="location" onClick={getLocation} style={{
-                       display:pathname==="/charts"?"none":"block"
+                       display:pathname==="/React-dark-sky-clone/charts"?"none":"block"
                        }}>
                         <i className="fas fa-location-arrow"></i>
                     </div>

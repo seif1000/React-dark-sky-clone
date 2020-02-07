@@ -18,8 +18,8 @@ function App(props) {
           <div className="App">
           <TopBar />
             <Switch>
-              <Route path="/charts" component={Chart} />
-              <Route path="/" component={Home}/>
+              <Route path="/React-dark-sky-clone/charts" component={Chart} />
+              <Route path="/React-dark-sky-clone" component={Home}/>
             </Switch>
            <Footer/>
           </div>
