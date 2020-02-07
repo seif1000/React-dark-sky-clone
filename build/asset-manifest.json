@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/React-dark-sky-clone/static/css/main.83492628.chunk.css",
+    "main.js": "/React-dark-sky-clone/static/js/main.f9c4fbf0.chunk.js",
+    "main.js.map": "/React-dark-sky-clone/static/js/main.f9c4fbf0.chunk.js.map",
+    "runtime-main.js": "/React-dark-sky-clone/static/js/runtime-main.c53d9253.js",
+    "runtime-main.js.map": "/React-dark-sky-clone/static/js/runtime-main.c53d9253.js.map",
+    "static/js/2.4b69e0d5.chunk.js": "/React-dark-sky-clone/static/js/2.4b69e0d5.chunk.js",
+    "static/js/2.4b69e0d5.chunk.js.map": "/React-dark-sky-clone/static/js/2.4b69e0d5.chunk.js.map",
+    "index.html": "/React-dark-sky-clone/index.html",
+    "precache-manifest.7edbcc5367b11ae5ad7e28b262a82a0a.js": "/React-dark-sky-clone/precache-manifest.7edbcc5367b11ae5ad7e28b262a82a0a.js",
+    "service-worker.js": "/React-dark-sky-clone/service-worker.js",
+    "static/css/main.83492628.chunk.css.map": "/React-dark-sky-clone/static/css/main.83492628.chunk.css.map",
+    "static/js/2.4b69e0d5.chunk.js.LICENSE.txt": "/React-dark-sky-clone/static/js/2.4b69e0d5.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/React-dark-sky-clone/static/media/logo.cf6f66af.png",
+    "static/media/rain.png": "/React-dark-sky-clone/static/media/rain.c00ac994.png",
+    "static/media/snowy.png": "/React-dark-sky-clone/static/media/snowy.ef1890cd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c53d9253.js",
+    "static/js/2.4b69e0d5.chunk.js",
+    "static/css/main.83492628.chunk.css",
+    "static/js/main.f9c4fbf0.chunk.js"
+  ]
+}
