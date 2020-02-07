@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/React-dark-sky-clone/precache-manifest.aeefd477906228d0b237550ab5cf53ff.js"
+  "/React-dark-sky-clone/precache-manifest.fbc999fed94e85b4fb653d3a6c310607.js"
 );
 
 self.addEventListener('message', (event) => {
