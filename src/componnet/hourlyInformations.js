@@ -32,7 +32,7 @@ const Hourly =()=> {
           {houreItem}
 
             </div>
-            <Link className="button" style ={style}  to="/charts">More Details</Link>
+            <Link className="button" style ={style}  to="/React-dark-sky-clone/charts">More Details</Link>
             <div className="separator"></div>
         </div>
        
