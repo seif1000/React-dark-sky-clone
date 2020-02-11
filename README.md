@@ -19,7 +19,7 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
 1. Clone or Download the repository
 
 	```
-	$ git clone https://reactjs.org/
+	$ git clone https://imgur.com/PpStz7s
 	$ cd React-dark-sky-clone
 	```
 2. Install Dependencies
