@@ -1,8 +1,7 @@
-
-	# React-dark-sky-clone
+# React-dark-sky-clone
   [Dark Sky clone](https://darksky.net/forecast/21.4267,39.8261/us12/en) made with React and chart.js
   
-  ![alt text](https://imgur.com/PpStz7s)
+  
 
 ## Index
 + [Demo](#demo)
