@@ -58,8 +58,12 @@ const TopBar =(props)=>  {
             }))
             Axios.get(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}&zoom=18&addressdetails=1`)
                  .then(res=>{
-                   localStorage.setItem('city' ,JSON.stringify(res.data.address.state));
-                   localStorage.setItem('province',JSON.stringify(res.data.address.city))
+                     if(res.data){
+                        console.log(res.data)
+                           localStorage.setItem('city' ,JSON.stringify(res.data.address.state));
+                           localStorage.setItem('province',JSON.stringify(res.data.address.city))
+                     }
+               
                  return setWeather(weather=>({
                     ...weather,
                     city:res.data.address.state,
