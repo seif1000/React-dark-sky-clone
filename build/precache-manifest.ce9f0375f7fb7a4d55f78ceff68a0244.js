@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "24a6fd6fa540dd30deb3b61bb5d46105",
+    "revision": "1ef665dd0d97dba9483089d3d2d49458",
     "url": "/React-dark-sky-clone/index.html"
   },
   {
