@@ -95,7 +95,7 @@ const TopBar =(props)=>  {
             <div className="brand__bar">
                  <Link className="link one" to="/React-dark-sky-clone">
                       <img src={logo} alt="logo" />
-                      <span>shine sun </span>
+                      <span>Sweety </span>
                  </Link>
                  <Link  to="/React-dark-sky-clone" className="link">Home</Link>
                 <a href="https://github.com/seif1000/React-dark-sky-clone" className="link" target="_blank" ><img src={githube} alt="git"/></a>
