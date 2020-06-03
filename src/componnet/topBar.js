@@ -61,7 +61,7 @@ const TopBar =(props)=>  {
                      if(res.data){
                         console.log(res.data)
                            localStorage.setItem('city' ,JSON.stringify(res.data.address.state));
-                           localStorage.setItem('province',JSON.stringify(res.data.address.city))
+                           localStorage.setItem('province',JSON.stringify(res.data.address.town))
                      }
                
                  return setWeather(weather=>({
