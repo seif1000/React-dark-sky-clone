@@ -1,4 +1,5 @@
 import React from 'react' ;
+//import TopBar from './topBar' ;
 import Day from './dayInformation' ;
 import Hourly from './hourlyInformations';
 
